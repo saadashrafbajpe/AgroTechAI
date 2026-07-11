@@ -1,0 +1,395 @@
+{
+  "crop_key": "coconut",
+  "name": "Coconut",
+  "botanical_name": "Cocos nucifera",
+  "crop_cycle_days": 5475,
+  "crop_cycle_note": "Perennial palm; first bearing in 5-7 years (dwarf/hybrid) to 6-10 years (tall varieties), productive for 60+ years",
+
+  "growth_stages": [
+    {
+      "stage_key": "nursery_seedling",
+      "name": "Nursery / Seedling",
+      "typical_age": "0-12 months",
+      "score_band": {"min": 0, "max": 15},
+      "characteristics": [
+        "Sprout emerging from husk, 2-4 leaves",
+        "Height under 60 cm",
+        "No visible trunk formation"
+      ],
+      "care_focus": [
+        "Partial shade, regular light watering",
+        "Protect from waterlogging and rats",
+        "Polybag or nursery bed with well-drained sandy loam"
+      ]
+    },
+    {
+      "stage_key": "juvenile_vegetative",
+      "name": "Juvenile / Vegetative",
+      "typical_age": "1-4 years",
+      "score_band": {"min": 15, "max": 40},
+      "characteristics": [
+        "Rapid leaf production, trunk not yet visible or just starting to thicken",
+        "6-15 leaves in canopy",
+        "No flowering"
+      ],
+      "care_focus": [
+        "Basin management, organic manure application",
+        "Regular irrigation especially in dry months",
+        "Watch for leaf-eating caterpillars and rhinoceros beetle damage on young leaves"
+      ]
+    },
+    {
+      "stage_key": "pre_flowering",
+      "name": "Pre-Flowering",
+      "typical_age": "4-6 years",
+      "score_band": {"min": 40, "max": 55},
+      "characteristics": [
+        "Visible trunk formation begins",
+        "Crown broadens, leaf scars visible on trunk base",
+        "First spadix (inflorescence) may emerge"
+      ],
+      "care_focus": [
+        "Increase potassium and boron application to support flowering",
+        "Monitor crown region closely for early bud rot signs"
+      ]
+    },
+    {
+      "stage_key": "flowering_button",
+      "name": "Flowering / Button Stage",
+      "typical_age": "5-8 years onward, recurring",
+      "score_band": {"min": 55, "max": 70},
+      "characteristics": [
+        "Spadix opens, male and female flowers visible",
+        "Small buttons (pin-head nuts) form after pollination"
+      ],
+      "care_focus": [
+        "Avoid moisture stress - button shedding risk is high",
+        "Manual pollination assistance in low-yield palms if needed"
+      ]
+    },
+    {
+      "stage_key": "nut_development",
+      "name": "Nut Development",
+      "typical_age": "recurring, 6-12 months per bunch",
+      "score_band": {"min": 70, "max": 90},
+      "characteristics": [
+        "Nuts enlarging, husk still green and soft",
+        "Water content high, kernel not yet formed"
+      ],
+      "care_focus": [
+        "Sustain irrigation - water stress now causes immature nut fall",
+        "Protect bunches from rodent and squirrel damage"
+      ]
+    },
+    {
+      "stage_key": "maturity_harvest",
+      "name": "Maturity / Harvest",
+      "typical_age": "11-13 months from button stage",
+      "score_band": {"min": 90, "max": 100},
+      "characteristics": [
+        "Husk turns brown, nut sounds hollow when tapped",
+        "Kernel fully formed and firm, copra-ready"
+      ],
+      "care_focus": [
+        "Harvest every 45-60 days to avoid over-maturity and nut fall losses",
+        "Post-harvest: dry husks and store copra away from moisture"
+      ]
+    }
+  ],
+
+  "seasonal_calendar": [
+    {
+      "season": "pre_monsoon_summer",
+      "months": "February-May",
+      "operations": [
+        "Basin irrigation twice a week in absence of rain",
+        "Mulching with coconut husk/coir to conserve soil moisture",
+        "Apply organic manure/compost before monsoon onset"
+      ],
+      "precautions": [
+        "Watch for red palm weevil activity, most active in hot dry weather",
+        "Avoid basin flooding that stresses roots before rain arrives"
+      ]
+    },
+    {
+      "season": "monsoon",
+      "months": "June-September",
+      "operations": [
+        "Ensure drainage channels are clear to prevent waterlogging",
+        "Apply first split of fertilizer dose after soil is moist",
+        "Inspect crown region for bud rot after heavy continuous rain"
+      ],
+      "precautions": [
+        "High risk period for bud rot (Phytophthora) and stem bleeding disease",
+        "Avoid basal application of fresh manure that can encourage fungal growth in waterlogged soil"
+      ]
+    },
+    {
+      "season": "post_monsoon",
+      "months": "October-November",
+      "operations": [
+        "Second split fertilizer application",
+        "Deweeding and basin opening for aeration",
+        "Check for rhinoceros beetle damage on unopened fronds"
+      ],
+      "precautions": [
+        "Residual soil moisture can still favor fungal disease - keep monitoring crown"
+      ]
+    },
+    {
+      "season": "winter",
+      "months": "December-January",
+      "operations": [
+        "Reduce irrigation frequency slightly, monitor soil moisture",
+        "Apply potash and micronutrients (boron) for flowering support"
+      ],
+      "precautions": [
+        "Cooler nights can slow nut development - avoid additional stress from irrigation neglect"
+      ]
+    }
+  ],
+
+  "diseases": [
+    {
+      "disease_key": "bud_rot",
+      "name": "Bud Rot",
+      "causal_agent": "Phytophthora palmivora",
+      "match_criteria": {
+        "affected_part": ["crown_bud"],
+        "discoloration": ["blackening", "browning"],
+        "odor_ooze": "yes",
+        "onset_speed": "sudden",
+        "spread": ["localized", "spreading"]
+      },
+      "severity_weight": 90,
+      "symptoms": [
+        "Foul-smelling rot at the spindle/crown region",
+        "Youngest leaves yellow, wilt, and can be pulled out easily",
+        "Crown eventually collapses if untreated"
+      ],
+      "treatment": [
+        "Remove and destroy all rotten tissue from the crown immediately",
+        "Apply Bordeaux paste or copper oxychloride paste to the cleaned wound",
+        "Drench crown region with a copper-based fungicide solution"
+      ],
+      "prevention": [
+        "Improve drainage around the palm base",
+        "Avoid mechanical injury to the crown during pruning",
+        "Prophylactic copper spray before monsoon onset in endemic areas"
+      ]
+    },
+    {
+      "disease_key": "stem_bleeding",
+      "name": "Stem Bleeding Disease",
+      "causal_agent": "Thielaviopsis paradoxa",
+      "match_criteria": {
+        "affected_part": ["stem_trunk"],
+        "discoloration": ["browning", "blackening"],
+        "odor_ooze": "yes",
+        "onset_speed": "gradual",
+        "spread": ["localized"]
+      },
+      "severity_weight": 65,
+      "symptoms": [
+        "Reddish-brown liquid oozing from cracks in the trunk",
+        "Internal tissue turns brown and friable near the bleeding patch",
+        "Gradual decline in nut yield"
+      ],
+      "treatment": [
+        "Chisel out the affected tissue and apply Bordeaux paste to the wound",
+        "Apply a fungicide (e.g. tridemorph) drench near the affected area",
+        "Improve overall palm nutrition to aid recovery"
+      ],
+      "prevention": [
+        "Avoid trunk injuries from tools or animals",
+        "Ensure balanced potassium nutrition, deficiency worsens severity"
+      ]
+    },
+    {
+      "disease_key": "leaf_blight",
+      "name": "Grey Leaf Blight",
+      "causal_agent": "Pestalotiopsis palmarum / Helminthosporium spp.",
+      "match_criteria": {
+        "affected_part": ["leaves"],
+        "discoloration": ["browning", "yellowing"],
+        "odor_ooze": "no",
+        "onset_speed": "gradual",
+        "spread": ["spreading"]
+      },
+      "severity_weight": 40,
+      "symptoms": [
+        "Small yellowish spots on leaflets that enlarge into grey-brown lesions with yellow halo",
+        "Lesions coalesce causing leaf tip drying",
+        "Mostly affects nutrient-stressed or older palms"
+      ],
+      "treatment": [
+        "Remove and burn severely affected leaves",
+        "Spray with mancozeb or copper oxychloride at 0.2% concentration",
+        "Correct nutrient deficiencies, especially nitrogen and potassium"
+      ],
+      "prevention": [
+        "Maintain balanced fertilization schedule",
+        "Avoid overcrowded planting that limits air circulation"
+      ]
+    },
+    {
+      "disease_key": "root_wilt",
+      "name": "Root (Wilt) Disease",
+      "causal_agent": "Phytoplasma (suspected)",
+      "match_criteria": {
+        "affected_part": ["roots"],
+        "discoloration": ["yellowing"],
+        "odor_ooze": "no",
+        "onset_speed": "gradual",
+        "spread": ["spreading"]
+      },
+      "severity_weight": 55,
+      "symptoms": [
+        "Ribboning of leaflets and marginal yellowing starting from older leaves",
+        "Reduction in canopy size and nut yield over years",
+        "Roots show progressive decay, few functional roots remain"
+      ],
+      "treatment": [
+        "No direct cure; apply integrated nutrient management to slow decline",
+        "Apply potassium, magnesium, and micronutrient mixtures as supportive care",
+        "Remove severely declined, unproductive palms to reduce disease spread"
+      ],
+      "prevention": [
+        "Plant disease-tolerant hybrid varieties in endemic tracts",
+        "Maintain good drainage and organic matter in soil"
+      ]
+    },
+    {
+      "disease_key": "nut_fall_button_shedding",
+      "name": "Premature Nut Fall / Button Shedding",
+      "causal_agent": "Fungal (Colletotrichum) or moisture-stress related",
+      "match_criteria": {
+        "affected_part": ["fruit_nut"],
+        "discoloration": ["blackening", "none"],
+        "odor_ooze": "no",
+        "onset_speed": "sudden",
+        "spread": ["localized"]
+      },
+      "severity_weight": 35,
+      "symptoms": [
+        "Buttons and immature nuts fall before maturing",
+        "Blackened scar at the point of nut attachment in fungal cases"
+      ],
+      "treatment": [
+        "Spray Bordeaux mixture (1%) on bunches at button stage",
+        "Ensure adequate irrigation during dry spells to reduce stress shedding"
+      ],
+      "prevention": [
+        "Avoid moisture stress during flowering and button stage",
+        "Balanced boron and potassium nutrition improves fruit retention"
+      ]
+    }
+  ],
+
+  "pests": [
+    {
+      "pest_key": "rhinoceros_beetle",
+      "name": "Rhinoceros Beetle",
+      "scientific_name": "Oryctes rhinoceros",
+      "risk_factors": {
+        "season": ["monsoon", "post_monsoon"],
+        "conditions": ["decaying organic matter nearby", "young palms 3-8 years"]
+      },
+      "symptoms": [
+        "V-shaped cuts on unopened fronds",
+        "Boring holes at the crown with chewed fibrous frass"
+      ],
+      "management": [
+        "Place naphthalene balls or neem cake in the crown leaf axils",
+        "Remove and destroy breeding sites (rotting logs, manure pits) nearby",
+        "Use pheromone traps for adult beetle control"
+      ]
+    },
+    {
+      "pest_key": "red_palm_weevil",
+      "name": "Red Palm Weevil",
+      "scientific_name": "Rhynchophorus ferrugineus",
+      "risk_factors": {
+        "season": ["summer", "pre_monsoon_summer"],
+        "conditions": ["trunk injuries present", "palms above 5 years"]
+      },
+      "symptoms": [
+        "Gum exudation with fibrous chewed matter from trunk holes",
+        "Foul fermented odor from the crown region",
+        "Crown may topple in advanced infestation"
+      ],
+      "management": [
+        "Avoid mechanical injuries during pruning that attract egg-laying",
+        "Inject systemic insecticide into the trunk on early detection",
+        "Install pheromone traps for mass trapping of adults"
+      ]
+    },
+    {
+      "pest_key": "eriophyid_mite",
+      "name": "Coconut Eriophyid Mite",
+      "scientific_name": "Aceria guerreronis",
+      "risk_factors": {
+        "season": ["summer"],
+        "conditions": ["dry weather", "young developing nuts"]
+      },
+      "symptoms": [
+        "Triangular yellowish patches near the nut's perianth region",
+        "Nuts become malformed with longitudinal streaks"
+      ],
+      "management": [
+        "Spray neem oil (2%) or wettable sulphur on bunches",
+        "Improve overall irrigation to reduce moisture stress"
+      ]
+    },
+    {
+      "pest_key": "black_headed_caterpillar",
+      "name": "Black-Headed Caterpillar",
+      "scientific_name": "Opisina arenosella",
+      "risk_factors": {
+        "season": ["summer", "post_monsoon"],
+        "conditions": ["older leaves", "neglected palms"]
+      },
+      "symptoms": [
+        "Dried, scorched appearance of older leaves",
+        "Webbing with fecal matter on the leaf undersurface"
+      ],
+      "management": [
+        "Release parasitoid Goniozus nephantidis where available",
+        "Prune and burn severely infested leaves",
+        "Spray neem-based insecticide on active infestations"
+      ]
+    }
+  ],
+
+  "weather_sensitivity": {
+    "optimal_rainfall_mm_month": [130, 230],
+    "optimal_temp_c": [20, 32],
+    "optimal_humidity_pct": [60, 90],
+    "risk_conditions": [
+      {
+        "condition": "excess_rainfall_waterlogging",
+        "triggers": {"rainfall": "heavy", "cloud_cover": "overcast"},
+        "impact": "Root suffocation, higher bud rot and stem bleeding risk",
+        "severity_weight": 65
+      },
+      {
+        "condition": "prolonged_dry_spell",
+        "triggers": {"rainfall": "none", "humidity": "low"},
+        "impact": "Button and immature nut shedding, mite infestation risk rises",
+        "severity_weight": 55
+      },
+      {
+        "condition": "heat_stress",
+        "triggers": {"temperature": "high", "wind": "hot_dry"},
+        "impact": "Leaf scorching and reduced photosynthesis, higher red palm weevil activity",
+        "severity_weight": 45
+      },
+      {
+        "condition": "high_wind",
+        "triggers": {"wind": "strong"},
+        "impact": "Frond breakage and inflorescence damage",
+        "severity_weight": 40
+      }
+    ]
+  }
+}

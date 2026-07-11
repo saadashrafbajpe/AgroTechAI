@@ -1,0 +1,382 @@
+{
+  "crop_key": "rubber",
+  "name": "Rubber",
+  "botanical_name": "Hevea brasiliensis",
+  "crop_cycle_days": 2555,
+  "crop_cycle_note": "Perennial tree; immature (pre-tapping) phase 6-7 years, then tapped for latex for 25-30 years",
+
+  "growth_stages": [
+    {
+      "stage_key": "nursery_seedling",
+      "name": "Nursery / Seedling",
+      "typical_age": "0-12 months",
+      "score_band": {"min": 0, "max": 15},
+      "characteristics": [
+        "Green budded or seedling stock, height under 1 m",
+        "Few whorls of leaves"
+      ],
+      "care_focus": [
+        "Shade protection, regular watering",
+        "Protect from leaf fungal disease in nursery beds"
+      ]
+    },
+    {
+      "stage_key": "immature_pre_tapping",
+      "name": "Immature (Pre-Tapping)",
+      "typical_age": "1-6 years",
+      "score_band": {"min": 15, "max": 55},
+      "characteristics": [
+        "Trunk girth increasing but below tappable girth (~50 cm at 125 cm height)",
+        "Canopy developing in successive whorls"
+      ],
+      "care_focus": [
+        "Regular fertilizer application per age-based schedule",
+        "Cover cropping (legumes) to improve soil and control weeds",
+        "Protect from grazing and fire in young plantations"
+      ]
+    },
+    {
+      "stage_key": "tapping_ready_mature",
+      "name": "Tapping-Ready / Mature",
+      "typical_age": "6-7 years onward",
+      "score_band": {"min": 55, "max": 75},
+      "characteristics": [
+        "Trunk girth reaches tappable standard",
+        "Tapping panel opened, regular latex flow begins"
+      ],
+      "care_focus": [
+        "Follow correct tapping frequency (e.g. alternate day) to avoid over-exploitation",
+        "Monitor tapping panel for tapping panel dryness (TPD) or disease entry"
+      ]
+    },
+    {
+      "stage_key": "wintering_refoliation",
+      "name": "Wintering / Refoliation",
+      "typical_age": "annual, December-February",
+      "score_band": {"min": 75, "max": 85},
+      "characteristics": [
+        "Leaf fall (wintering) followed by flushing of new leaves",
+        "Tapping typically rested or reduced during this period"
+      ],
+      "care_focus": [
+        "Rest tapping during peak leaf fall to conserve tree health",
+        "Watch new flush for powdery mildew infection risk"
+      ]
+    },
+    {
+      "stage_key": "peak_yield",
+      "name": "Peak Yield Phase",
+      "typical_age": "10-20 years",
+      "score_band": {"min": 85, "max": 95},
+      "characteristics": [
+        "Maximum latex yield period with mature, healthy canopy",
+        "Well-established tapping panel rotation"
+      ],
+      "care_focus": [
+        "Maintain balanced fertilization to sustain yield",
+        "Rain guarding during monsoon to protect tapping panel and sustain tapping days"
+      ]
+    },
+    {
+      "stage_key": "old_senile",
+      "name": "Old / Senile",
+      "typical_age": "25-30+ years",
+      "score_band": {"min": 95, "max": 100},
+      "characteristics": [
+        "Declining latex yield, panel exhaustion from repeated tapping",
+        "Candidate for replanting"
+      ],
+      "care_focus": [
+        "Plan replanting with high-yield clones",
+        "Consider timber harvest value at replanting"
+      ]
+    }
+  ],
+
+  "seasonal_calendar": [
+    {
+      "season": "pre_monsoon_summer",
+      "months": "February-May",
+      "operations": [
+        "Wintering/refoliation period tapering off, new leaf flush strengthens",
+        "Apply summer manuring dose once new leaves mature",
+        "Prepare rain guards before monsoon tapping resumes"
+      ],
+      "precautions": [
+        "Watch new flush closely for powdery mildew during this tender-leaf period",
+        "Avoid tapping stress during active leaf flushing"
+      ]
+    },
+    {
+      "season": "monsoon",
+      "months": "June-September",
+      "operations": [
+        "Install rain guards on tapping panels to allow continued tapping",
+        "Apply fungicide spray schedule against abnormal leaf fall disease",
+        "Monitor drainage in low-lying plantation areas"
+      ],
+      "precautions": [
+        "Peak risk period for abnormal leaf fall (Phytophthora) and Corynespora leaf fall",
+        "Tapping panel dryness risk increases with over-tapping in wet conditions"
+      ]
+    },
+    {
+      "season": "post_monsoon",
+      "months": "October-November",
+      "operations": [
+        "Remove rain guards gradually as rains reduce",
+        "Apply second manuring split",
+        "Resume normal tapping frequency"
+      ],
+      "precautions": [
+        "Residual humidity can still favor fungal leaf disease - continue monitoring"
+      ]
+    },
+    {
+      "season": "winter_wintering",
+      "months": "December-January",
+      "operations": [
+        "Natural leaf fall (wintering) begins",
+        "Reduce or rest tapping as trees shed leaves"
+      ],
+      "precautions": [
+        "Avoid tapping stressed trees during peak leaf fall to protect long-term yield"
+      ]
+    }
+  ],
+
+  "diseases": [
+    {
+      "disease_key": "abnormal_leaf_fall",
+      "name": "Abnormal Leaf Fall Disease",
+      "causal_agent": "Phytophthora meadii / P. palmivora",
+      "match_criteria": {
+        "affected_part": ["leaves"],
+        "discoloration": ["blackening", "browning"],
+        "odor_ooze": "no",
+        "onset_speed": "sudden",
+        "spread": ["spreading"]
+      },
+      "severity_weight": 75,
+      "symptoms": [
+        "Water-soaked black lesions on petiole causing rapid leaf drop, often with the leaflet still green",
+        "Pod rot and twig dieback can accompany severe infection",
+        "Rapid defoliation during continuous monsoon rain"
+      ],
+      "treatment": [
+        "Aerial spraying of copper-based fungicide (e.g. 1% Bordeaux mixture) during monsoon",
+        "Ground spraying on young plants where aerial spray isn't feasible",
+        "Clear fallen infected leaves to reduce inoculum"
+      ],
+      "prevention": [
+        "Follow the recommended prophylactic spraying calendar before/during monsoon",
+        "Avoid waterlogging in the plantation"
+      ]
+    },
+    {
+      "disease_key": "powdery_mildew",
+      "name": "Powdery Mildew",
+      "causal_agent": "Oidium heveae",
+      "match_criteria": {
+        "affected_part": ["leaves"],
+        "discoloration": ["none", "yellowing"],
+        "odor_ooze": "no",
+        "onset_speed": "sudden",
+        "spread": ["spreading"]
+      },
+      "severity_weight": 60,
+      "symptoms": [
+        "White powdery fungal growth on young, tender leaves",
+        "Affected young leaves shrivel and drop, delaying canopy formation",
+        "Most damaging during the wintering/refoliation flush"
+      ],
+      "treatment": [
+        "Dust with fine sulphur powder during early morning hours",
+        "Spray a recommended systemic fungicide if dusting isn't sufficient"
+      ],
+      "prevention": [
+        "Time sulphur dusting to coincide with the new leaf flush period",
+        "Avoid excess shade that keeps foliage persistently moist"
+      ]
+    },
+    {
+      "disease_key": "corynespora_leaf_fall",
+      "name": "Corynespora Leaf Fall",
+      "causal_agent": "Corynespora cassiicola",
+      "match_criteria": {
+        "affected_part": ["leaves"],
+        "discoloration": ["yellowing", "browning"],
+        "odor_ooze": "no",
+        "onset_speed": "gradual",
+        "spread": ["spreading"]
+      },
+      "severity_weight": 55,
+      "symptoms": [
+        "Fishbone-pattern necrotic lesions along the leaf veins",
+        "Yellowing followed by defoliation, can occur outside monsoon season too"
+      ],
+      "treatment": [
+        "Spray a recommended fungicide effective against Corynespora on affected clones",
+        "Avoid planting highly susceptible clones in disease-prone areas"
+      ],
+      "prevention": [
+        "Select tolerant clones where the disease is historically severe",
+        "Maintain plant vigor through balanced nutrition"
+      ]
+    },
+    {
+      "disease_key": "pink_disease",
+      "name": "Pink Disease",
+      "causal_agent": "Corticium salmonicolor",
+      "match_criteria": {
+        "affected_part": ["stem_trunk"],
+        "discoloration": ["none"],
+        "odor_ooze": "no",
+        "onset_speed": "gradual",
+        "spread": ["localized"]
+      },
+      "severity_weight": 45,
+      "symptoms": [
+        "Pinkish, silky fungal growth encircling branches or the upper trunk",
+        "Affected branch above the infection point wilts and dies back",
+        "Most common on branches in high-canopy, humid areas"
+      ],
+      "treatment": [
+        "Scrape off the fungal growth and apply Bordeaux paste to the wound",
+        "Prune and destroy severely affected branches"
+      ],
+      "prevention": [
+        "Prune to maintain airflow in dense canopy areas",
+        "Regular field inspection during monsoon for early detection"
+      ]
+    },
+    {
+      "disease_key": "tapping_panel_dryness",
+      "name": "Tapping Panel Dryness (TPD)",
+      "causal_agent": "Physiological disorder (over-tapping/stress related, not pathogenic)",
+      "match_criteria": {
+        "affected_part": ["stem_trunk"],
+        "discoloration": ["browning"],
+        "odor_ooze": "no",
+        "onset_speed": "gradual",
+        "spread": ["localized"]
+      },
+      "severity_weight": 40,
+      "symptoms": [
+        "Partial or complete cessation of latex flow from the tapping cut",
+        "Bark in the tapped panel appears dry, sometimes cracked"
+      ],
+      "treatment": [
+        "Rest the affected panel from tapping to allow recovery",
+        "Apply recommended panel-recovery treatments as advised by extension officers"
+      ],
+      "prevention": [
+        "Follow correct tapping frequency and depth guidelines, avoid over-exploitation",
+        "Ensure adequate tree nutrition to support latex regeneration"
+      ]
+    }
+  ],
+
+  "pests": [
+    {
+      "pest_key": "scale_insects",
+      "name": "Scale Insects",
+      "scientific_name": "Various (e.g. Aspidiotus spp.)",
+      "risk_factors": {
+        "season": ["summer", "pre_monsoon_summer"],
+        "conditions": ["young plants", "dense canopy with poor airflow"]
+      },
+      "symptoms": [
+        "Small brown/grey scale colonies on stems and leaves",
+        "Yellowing and weakening of affected shoots"
+      ],
+      "management": [
+        "Spray neem oil or a recommended contact insecticide on colonies",
+        "Prune heavily infested twigs and destroy them"
+      ]
+    },
+    {
+      "pest_key": "mites",
+      "name": "Rubber Mites",
+      "scientific_name": "Various (e.g. Tenuipalpus spp.)",
+      "risk_factors": {
+        "season": ["summer"],
+        "conditions": ["dry weather", "young leaf flush"]
+      },
+      "symptoms": [
+        "Bronzing/rust-colored discoloration on the leaf undersurface",
+        "Premature leaf drop in heavy infestation"
+      ],
+      "management": [
+        "Spray wettable sulphur or a recommended miticide",
+        "Ensure adequate irrigation to reduce plant stress in dry season"
+      ]
+    },
+    {
+      "pest_key": "termites",
+      "name": "Termites",
+      "scientific_name": "Various species",
+      "risk_factors": {
+        "season": ["summer", "post_monsoon"],
+        "conditions": ["young plants", "weakened or stressed trees"]
+      },
+      "symptoms": [
+        "Mud tunnels/galleries on the trunk surface",
+        "Hollowing of stem/root collar in young plants leading to wilting"
+      ],
+      "management": [
+        "Apply a recommended soil insecticide treatment around affected plant bases",
+        "Remove decaying stumps/wood nearby that attract termite colonies"
+      ]
+    },
+    {
+      "pest_key": "bark_eating_caterpillar",
+      "name": "Bark-Eating Caterpillar",
+      "scientific_name": "Indarbela spp.",
+      "risk_factors": {
+        "season": ["summer", "post_monsoon"],
+        "conditions": ["mature trees", "rough bark crevices"]
+      },
+      "symptoms": [
+        "Silken webbed tunnels/galleries visible on the trunk bark",
+        "Bark damage weakening the tree over time"
+      ],
+      "management": [
+        "Manually remove and destroy webbing and larvae found in tunnels",
+        "Apply a recommended insecticide paste into the tunnel openings"
+      ]
+    }
+  ],
+
+  "weather_sensitivity": {
+    "optimal_rainfall_mm_month": [180, 300],
+    "optimal_temp_c": [25, 34],
+    "optimal_humidity_pct": [70, 90],
+    "risk_conditions": [
+      {
+        "condition": "continuous_monsoon_rain",
+        "triggers": {"rainfall": "heavy", "cloud_cover": "overcast"},
+        "impact": "High abnormal leaf fall risk, reduced tapping days without rain guards",
+        "severity_weight": 70
+      },
+      {
+        "condition": "dry_spell_summer",
+        "triggers": {"rainfall": "none", "humidity": "low"},
+        "impact": "Moisture stress in young plants, higher mite incidence",
+        "severity_weight": 45
+      },
+      {
+        "condition": "heat_stress",
+        "triggers": {"temperature": "high"},
+        "impact": "Reduced latex flow and increased tapping panel stress",
+        "severity_weight": 40
+      },
+      {
+        "condition": "high_wind",
+        "triggers": {"wind": "strong"},
+        "impact": "Branch breakage risk in mature trees with heavy canopy",
+        "severity_weight": 35
+      }
+    ]
+  }
+}

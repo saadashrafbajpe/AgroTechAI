@@ -1,0 +1,383 @@
+{
+  "crop_key": "arecanut",
+  "name": "Arecanut",
+  "botanical_name": "Areca catechu",
+  "crop_cycle_days": 1825,
+  "crop_cycle_note": "Perennial palm; first bearing in 5-6 years, economically productive for 40-60 years",
+
+  "growth_stages": [
+    {
+      "stage_key": "nursery_seedling",
+      "name": "Nursery / Seedling",
+      "typical_age": "0-12 months",
+      "score_band": {"min": 0, "max": 15},
+      "characteristics": [
+        "2-4 leaves, height under 45 cm",
+        "Root system still shallow"
+      ],
+      "care_focus": [
+        "Shade nursery with regular watering",
+        "Protect from direct sun scorch and waterlogging"
+      ]
+    },
+    {
+      "stage_key": "juvenile_vegetative",
+      "name": "Juvenile / Vegetative",
+      "typical_age": "1-4 years",
+      "score_band": {"min": 15, "max": 45},
+      "characteristics": [
+        "Rapid leaf addition, trunk girth increasing but no visible ringed trunk yet",
+        "No flowering"
+      ],
+      "care_focus": [
+        "Regular basin irrigation, especially in summer",
+        "Apply organic manure and shade for intercrops if any (banana/pepper)"
+      ]
+    },
+    {
+      "stage_key": "flowering_inflorescence",
+      "name": "Flowering (Inflorescence Emergence)",
+      "typical_age": "4-6 years onward",
+      "score_band": {"min": 45, "max": 60},
+      "characteristics": [
+        "Ringed trunk visible with clear leaf scars",
+        "Spadix (inflorescence) emerges from leaf axil"
+      ],
+      "care_focus": [
+        "Increase potash application to support flowering",
+        "Monitor for spindle bug damage on the emerging inflorescence"
+      ]
+    },
+    {
+      "stage_key": "fruit_set",
+      "name": "Fruit Set",
+      "typical_age": "recurring, post-pollination",
+      "score_band": {"min": 60, "max": 75},
+      "characteristics": [
+        "Small green nuts forming in bunches after pollination",
+        "High vulnerability to fruit rot in this stage"
+      ],
+      "care_focus": [
+        "Prophylactic Bordeaux mixture spray before monsoon to prevent koleroga (fruit rot)",
+        "Avoid water stress that causes fruit drop"
+      ]
+    },
+    {
+      "stage_key": "fruit_maturation",
+      "name": "Fruit Maturation",
+      "typical_age": "7-8 months after fruit set",
+      "score_band": {"min": 75, "max": 90},
+      "characteristics": [
+        "Nuts enlarge, husk color transitions from green towards yellow-orange",
+        "Kernel hardens progressively"
+      ],
+      "care_focus": [
+        "Sustain irrigation for uniform nut development",
+        "Watch bunches for mealybug colonies"
+      ]
+    },
+    {
+      "stage_key": "harvest",
+      "name": "Harvest",
+      "typical_age": "8-9 months after fruit set",
+      "score_band": {"min": 90, "max": 100},
+      "characteristics": [
+        "Nuts fully colored (orange/red depending on variety), ready for processing",
+        "Bunches harvested for red or white arecanut processing depending on maturity"
+      ],
+      "care_focus": [
+        "Timely harvesting to match intended processing (tender/ripe)",
+        "Proper drying and storage to prevent post-harvest mold"
+      ]
+    }
+  ],
+
+  "seasonal_calendar": [
+    {
+      "season": "pre_monsoon_summer",
+      "months": "February-May",
+      "operations": [
+        "Basin irrigation 2-3 times a week depending on soil type",
+        "Apply mulch (arecanut leaves/husk) to conserve moisture",
+        "Complete Bordeaux mixture spraying before monsoon onset for fruit rot prevention"
+      ],
+      "precautions": [
+        "Heat stress can affect flowering quality - avoid irrigation gaps",
+        "Watch for spindle bug buildup in dry heat"
+      ]
+    },
+    {
+      "season": "monsoon",
+      "months": "June-September",
+      "operations": [
+        "Ensure proper drainage in garden to avoid waterlogging",
+        "Repeat Bordeaux mixture spray after heavy showers if washed off",
+        "Inspect bunches regularly for koleroga (fruit rot) symptoms"
+      ],
+      "precautions": [
+        "Peak risk period for koleroga and bud rot due to continuous humidity",
+        "Avoid unnecessary basal fertilizer application in waterlogged soil"
+      ]
+    },
+    {
+      "season": "post_monsoon",
+      "months": "October-November",
+      "operations": [
+        "Apply fertilizer split dose once soil moisture stabilizes",
+        "Deweeding and basin opening",
+        "Begin harvest of early maturing bunches"
+      ],
+      "precautions": [
+        "Residual moisture still supports fungal disease - keep monitoring"
+      ]
+    },
+    {
+      "season": "winter",
+      "months": "December-January",
+      "operations": [
+        "Main harvest season for most varieties",
+        "Reduce irrigation frequency, monitor soil moisture regularly",
+        "Post-harvest processing and drying of nuts"
+      ],
+      "precautions": [
+        "Ensure proper drying to prevent mold during storage"
+      ]
+    }
+  ],
+
+  "diseases": [
+    {
+      "disease_key": "koleroga_fruit_rot",
+      "name": "Koleroga (Fruit Rot / Mahali Disease)",
+      "causal_agent": "Phytophthora meadii / P. arecae",
+      "match_criteria": {
+        "affected_part": ["fruit_nut"],
+        "discoloration": ["blackening", "browning"],
+        "odor_ooze": "no",
+        "onset_speed": "sudden",
+        "spread": ["spreading"]
+      },
+      "severity_weight": 85,
+      "symptoms": [
+        "Water-soaked patches on young nuts turning dark brown to black",
+        "Affected nuts shrivel and fall prematurely",
+        "Rapid spread through the bunch in humid weather"
+      ],
+      "treatment": [
+        "Spray 1% Bordeaux mixture immediately on all bunches and crown",
+        "Remove and destroy fallen and infected nuts to reduce inoculum",
+        "Repeat spray after every heavy rain spell during monsoon"
+      ],
+      "prevention": [
+        "Prophylactic Bordeaux spray before monsoon onset (May-June)",
+        "Ensure good garden drainage and avoid overcrowded planting"
+      ]
+    },
+    {
+      "disease_key": "bud_rot",
+      "name": "Bud Rot",
+      "causal_agent": "Phytophthora palmivora",
+      "match_criteria": {
+        "affected_part": ["crown_bud"],
+        "discoloration": ["blackening", "browning"],
+        "odor_ooze": "yes",
+        "onset_speed": "sudden",
+        "spread": ["localized", "spreading"]
+      },
+      "severity_weight": 90,
+      "symptoms": [
+        "Foul-smelling rot in the innermost unopened leaf (spindle)",
+        "Youngest leaves wilt and can be pulled out with ease",
+        "Palm may die if crown is destroyed"
+      ],
+      "treatment": [
+        "Remove all rotten tissue and apply Bordeaux paste to the wound",
+        "Drench crown region with copper oxychloride solution",
+        "Cover crown to protect from further rain entry during treatment"
+      ],
+      "prevention": [
+        "Improve drainage in low-lying gardens",
+        "Avoid injury to the crown region during harvesting operations"
+      ]
+    },
+    {
+      "disease_key": "stem_bleeding",
+      "name": "Stem Bleeding",
+      "causal_agent": "Thielaviopsis paradoxa",
+      "match_criteria": {
+        "affected_part": ["stem_trunk"],
+        "discoloration": ["browning", "blackening"],
+        "odor_ooze": "yes",
+        "onset_speed": "gradual",
+        "spread": ["localized"]
+      },
+      "severity_weight": 60,
+      "symptoms": [
+        "Dark reddish-brown fluid oozing from trunk cracks",
+        "Internal tissue discoloration and gradual weakening of the trunk"
+      ],
+      "treatment": [
+        "Scrape affected bark and apply Bordeaux paste",
+        "Apply systemic fungicide drench near the base if severe"
+      ],
+      "prevention": [
+        "Avoid mechanical injury to the trunk",
+        "Maintain balanced nutrition, particularly potassium"
+      ]
+    },
+    {
+      "disease_key": "yellow_leaf_disease",
+      "name": "Yellow Leaf Disease (YLD)",
+      "causal_agent": "Phytoplasma (suspected)",
+      "match_criteria": {
+        "affected_part": ["leaves"],
+        "discoloration": ["yellowing"],
+        "odor_ooze": "no",
+        "onset_speed": "gradual",
+        "spread": ["spreading"]
+      },
+      "severity_weight": 55,
+      "symptoms": [
+        "Uniform yellowing of leaflets, most visible on older fronds first",
+        "Reduced leaf size and canopy density over successive years",
+        "Gradual decline in nut yield and quality"
+      ],
+      "treatment": [
+        "No direct cure; supportive nutrition with micronutrient mixtures",
+        "Remove severely declined, unproductive palms to limit spread"
+      ],
+      "prevention": [
+        "Use disease-free planting material from certified nurseries",
+        "Maintain good soil health with organic matter"
+      ]
+    },
+    {
+      "disease_key": "anabe_roga_collar_rot",
+      "name": "Anabe Roga (Collar Rot)",
+      "causal_agent": "Fungal complex (soil-borne)",
+      "match_criteria": {
+        "affected_part": ["roots"],
+        "discoloration": ["browning"],
+        "odor_ooze": "no",
+        "onset_speed": "gradual",
+        "spread": ["localized"]
+      },
+      "severity_weight": 50,
+      "symptoms": [
+        "Yellowing and drooping of lower leaves",
+        "Rotting visible at the collar/root zone when soil is dug around the base"
+      ],
+      "treatment": [
+        "Drench collar region with a copper fungicide solution",
+        "Improve drainage to reduce root zone moisture"
+      ],
+      "prevention": [
+        "Avoid waterlogging around the base",
+        "Apply well-decomposed organic manure, not fresh"
+      ]
+    }
+  ],
+
+  "pests": [
+    {
+      "pest_key": "spindle_bug",
+      "name": "Arecanut Spindle Bug",
+      "scientific_name": "Carvalhoia arecae",
+      "risk_factors": {
+        "season": ["monsoon", "post_monsoon"],
+        "conditions": ["dense shaded gardens", "young flowering spindles present"]
+      },
+      "symptoms": [
+        "Malformed, withered inflorescence spindle",
+        "Brown streaks on the emerging spindle before it opens"
+      ],
+      "management": [
+        "Spray malathion or a recommended contact insecticide on the spindle at early emergence",
+        "Reduce overcrowding and shade for better air circulation"
+      ]
+    },
+    {
+      "pest_key": "inflorescence_caterpillar",
+      "name": "Inflorescence Caterpillar",
+      "scientific_name": "Tirathaba mundella",
+      "risk_factors": {
+        "season": ["monsoon"],
+        "conditions": ["flowering stage", "high humidity"]
+      },
+      "symptoms": [
+        "Webbing on the inflorescence with feeding damage on flowers",
+        "Premature nut/flower drop"
+      ],
+      "management": [
+        "Remove and destroy webbed inflorescence parts",
+        "Spray recommended insecticide during early flowering if infestation noticed"
+      ]
+    },
+    {
+      "pest_key": "root_grub",
+      "name": "White Grub (Root Grub)",
+      "scientific_name": "Leucopholis spp.",
+      "risk_factors": {
+        "season": ["post_monsoon", "winter"],
+        "conditions": ["sandy soils", "young palms"]
+      },
+      "symptoms": [
+        "Yellowing and stunted growth of young palms",
+        "Grubs visible in soil when root zone is dug"
+      ],
+      "management": [
+        "Apply neem cake to the basin to deter grub buildup",
+        "Soil drench with a recommended systemic insecticide in severe cases"
+      ]
+    },
+    {
+      "pest_key": "mealybug",
+      "name": "Mealybug",
+      "scientific_name": "Various (e.g. Ferrisia virgata)",
+      "risk_factors": {
+        "season": ["summer", "pre_monsoon_summer"],
+        "conditions": ["fruit bunch clusters", "ant activity present"]
+      },
+      "symptoms": [
+        "White waxy colonies on nuts and bunch stalks",
+        "Sooty mold development from honeydew secretion"
+      ],
+      "management": [
+        "Spray neem oil (2%) directly on bunch clusters",
+        "Control ant movement on the trunk which protects mealybugs"
+      ]
+    }
+  ],
+
+  "weather_sensitivity": {
+    "optimal_rainfall_mm_month": [150, 250],
+    "optimal_temp_c": [22, 32],
+    "optimal_humidity_pct": [65, 95],
+    "risk_conditions": [
+      {
+        "condition": "continuous_heavy_rain",
+        "triggers": {"rainfall": "heavy", "cloud_cover": "overcast"},
+        "impact": "Sharp rise in koleroga (fruit rot) and bud rot incidence",
+        "severity_weight": 75
+      },
+      {
+        "condition": "prolonged_dry_spell",
+        "triggers": {"rainfall": "none", "humidity": "low"},
+        "impact": "Flower and nut drop due to moisture stress",
+        "severity_weight": 50
+      },
+      {
+        "condition": "heat_stress",
+        "triggers": {"temperature": "high"},
+        "impact": "Reduced pollination success and spindle bug buildup",
+        "severity_weight": 40
+      },
+      {
+        "condition": "high_wind",
+        "triggers": {"wind": "strong"},
+        "impact": "Bunch and frond damage, increased fruit drop",
+        "severity_weight": 35
+      }
+    ]
+  }
+}

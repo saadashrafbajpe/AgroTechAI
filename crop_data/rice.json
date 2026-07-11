@@ -1,0 +1,400 @@
+{
+  "crop_key": "rice",
+  "name": "Rice",
+  "botanical_name": "Oryza sativa",
+  "crop_cycle_days": 130,
+  "crop_cycle_note": "Annual crop; duration varies 100-150 days depending on variety (short/medium/long duration)",
+
+  "growth_stages": [
+    {
+      "stage_key": "nursery",
+      "name": "Nursery Stage",
+      "typical_age": "0-25 days",
+      "score_band": {"min": 0, "max": 15},
+      "characteristics": [
+        "Seedlings 2-4 leaves, 15-20 cm height",
+        "Grown in dense nursery bed before transplanting"
+      ],
+      "care_focus": [
+        "Maintain thin water film in nursery bed",
+        "Watch for seedling blight in overcrowded beds"
+      ]
+    },
+    {
+      "stage_key": "vegetative_tillering",
+      "name": "Vegetative / Tillering",
+      "typical_age": "25-55 days after transplanting",
+      "score_band": {"min": 15, "max": 40},
+      "characteristics": [
+        "Active tiller production, plant bushy in appearance",
+        "Leaf color deep green if nitrogen adequate"
+      ],
+      "care_focus": [
+        "Maintain 2-5 cm standing water for tillering",
+        "First and second nitrogen top-dressing during this window"
+      ]
+    },
+    {
+      "stage_key": "reproductive_panicle_initiation",
+      "name": "Reproductive / Panicle Initiation",
+      "typical_age": "55-75 days after transplanting",
+      "score_band": {"min": 40, "max": 60},
+      "characteristics": [
+        "Stem elongation begins, young panicle visible when stem dissected",
+        "Tiller number stabilizes, unproductive tillers may die back"
+      ],
+      "care_focus": [
+        "Critical stage for nitrogen top-dressing (panicle initiation dose)",
+        "Maintain consistent water level, avoid drought stress now"
+      ]
+    },
+    {
+      "stage_key": "flowering_heading",
+      "name": "Flowering / Heading",
+      "typical_age": "75-95 days after transplanting",
+      "score_band": {"min": 60, "max": 75},
+      "characteristics": [
+        "Panicle emerges fully from the leaf sheath",
+        "Flowering (anthesis) occurs, most sensitive stage to stress"
+      ],
+      "care_focus": [
+        "Avoid water stress and pesticide spraying during flower opening hours",
+        "Monitor closely for gundhi bug (rice bug) and neck blast"
+      ]
+    },
+    {
+      "stage_key": "grain_filling_milk_dough",
+      "name": "Grain Filling (Milk / Dough Stage)",
+      "typical_age": "95-115 days after transplanting",
+      "score_band": {"min": 75, "max": 90},
+      "characteristics": [
+        "Grains filling with milky then doughy content",
+        "Panicles bending downward as grain weight increases"
+      ],
+      "care_focus": [
+        "Maintain shallow water, then begin gradual drainage as grains harden",
+        "Protect from birds and rodent damage"
+      ]
+    },
+    {
+      "stage_key": "maturity_harvest",
+      "name": "Maturity / Harvest",
+      "typical_age": "115-130+ days after transplanting",
+      "score_band": {"min": 90, "max": 100},
+      "characteristics": [
+        "Grains hard, straw turns golden yellow",
+        "80-85% of grains in the panicle should be straw-colored for harvest"
+      ],
+      "care_focus": [
+        "Drain field fully 7-10 days before harvest",
+        "Timely harvest to avoid grain shattering and lodging losses"
+      ]
+    }
+  ],
+
+  "seasonal_calendar": [
+    {
+      "season": "kharif_monsoon",
+      "months": "June-October",
+      "operations": [
+        "Main sowing/transplanting season with monsoon onset",
+        "Maintain field bunds to retain water during rains",
+        "Apply basal fertilizer dose at transplanting"
+      ],
+      "precautions": [
+        "High risk for blast and bacterial leaf blight in continuous wet weather",
+        "Ensure drainage outlets to avoid complete submergence during heavy rain"
+      ]
+    },
+    {
+      "season": "rabi_winter",
+      "months": "November-February",
+      "operations": [
+        "Second crop cycle in irrigated areas; sowing/transplanting in Nov-Dec",
+        "Careful water scheduling since rainfall is minimal"
+      ],
+      "precautions": [
+        "Cold spells during flowering can cause spikelet sterility",
+        "Watch for brown planthopper buildup in dense, over-irrigated fields"
+      ]
+    },
+    {
+      "season": "summer_zaid",
+      "months": "March-May",
+      "operations": [
+        "Summer/zaid crop only in assured irrigation areas",
+        "Frequent irrigation needed due to high evapotranspiration"
+      ],
+      "precautions": [
+        "Heat stress during flowering can reduce grain set",
+        "Stem borer incidence often higher in summer crop"
+      ]
+    }
+  ],
+
+  "diseases": [
+    {
+      "disease_key": "blast",
+      "name": "Rice Blast",
+      "causal_agent": "Magnaporthe oryzae",
+      "match_criteria": {
+        "affected_part": ["leaves"],
+        "discoloration": ["browning"],
+        "odor_ooze": "no",
+        "onset_speed": "sudden",
+        "spread": ["spreading"]
+      },
+      "severity_weight": 80,
+      "symptoms": [
+        "Spindle/diamond-shaped lesions with grey center and brown margin on leaves",
+        "Node blast causes blackening and breaking at the node",
+        "Neck blast causes the panicle neck to rot, resulting in empty grains"
+      ],
+      "treatment": [
+        "Spray tricyclazole or a recommended systemic fungicide at first appearance",
+        "Avoid excess nitrogen application which increases susceptibility",
+        "Drain excess standing water temporarily to reduce humidity around the crop"
+      ],
+      "prevention": [
+        "Use resistant/tolerant varieties where available",
+        "Balanced fertilization, avoid excess nitrogen doses",
+        "Seed treatment with fungicide before sowing"
+      ]
+    },
+    {
+      "disease_key": "bacterial_leaf_blight",
+      "name": "Bacterial Leaf Blight (BLB)",
+      "causal_agent": "Xanthomonas oryzae pv. oryzae",
+      "match_criteria": {
+        "affected_part": ["leaves"],
+        "discoloration": ["yellowing", "browning"],
+        "odor_ooze": "no",
+        "onset_speed": "gradual",
+        "spread": ["spreading"]
+      },
+      "severity_weight": 65,
+      "symptoms": [
+        "Water-soaked lesions starting from leaf tip/margin turning yellow to white/grey",
+        "Wavy margin of lesion distinguishes it from blast",
+        "Whole leaf can dry up in severe infection (kresek phase in seedlings)"
+      ],
+      "treatment": [
+        "Spray a copper-based bactericide or streptocycline-copper mixture",
+        "Drain field to reduce humidity, avoid excess nitrogen",
+        "Remove and destroy severely infected plants in seedling stage"
+      ],
+      "prevention": [
+        "Use certified disease-free seed",
+        "Avoid clipping seedling tops during transplanting in endemic areas",
+        "Balanced potassium application improves resistance"
+      ]
+    },
+    {
+      "disease_key": "sheath_blight",
+      "name": "Sheath Blight",
+      "causal_agent": "Rhizoctonia solani",
+      "match_criteria": {
+        "affected_part": ["stem_trunk"],
+        "discoloration": ["browning"],
+        "odor_ooze": "no",
+        "onset_speed": "gradual",
+        "spread": ["spreading"]
+      },
+      "severity_weight": 55,
+      "symptoms": [
+        "Oval, greenish-grey lesions on leaf sheath near the water line",
+        "Lesions enlarge with irregular brown margins, coalescing upward",
+        "Lodging risk in severe, dense crop stands"
+      ],
+      "treatment": [
+        "Spray validamycin or a recommended fungicide targeting Rhizoctonia",
+        "Reduce planting density in future sowing to improve air flow",
+        "Avoid excess nitrogen which promotes dense canopy microclimate"
+      ],
+      "prevention": [
+        "Balanced spacing at transplanting",
+        "Clean field bunds of weed hosts"
+      ]
+    },
+    {
+      "disease_key": "brown_spot",
+      "name": "Brown Spot",
+      "causal_agent": "Bipolaris oryzae (Cochliobolus miyabeanus)",
+      "match_criteria": {
+        "affected_part": ["leaves"],
+        "discoloration": ["browning"],
+        "odor_ooze": "no",
+        "onset_speed": "gradual",
+        "spread": ["spreading"]
+      },
+      "severity_weight": 40,
+      "symptoms": [
+        "Small oval brown spots with grey center scattered across the leaf",
+        "Common in nutrient-deficient soils, especially low potassium/silicon",
+        "Can also infect grains causing discoloration"
+      ],
+      "treatment": [
+        "Spray mancozeb or a recommended fungicide",
+        "Apply potash fertilizer to correct deficiency"
+      ],
+      "prevention": [
+        "Balanced soil fertility management",
+        "Use healthy, treated seed"
+      ]
+    },
+    {
+      "disease_key": "false_smut",
+      "name": "False Smut",
+      "causal_agent": "Ustilaginoidea virens",
+      "match_criteria": {
+        "affected_part": ["fruit_nut"],
+        "discoloration": ["yellowing", "none"],
+        "odor_ooze": "no",
+        "onset_speed": "gradual",
+        "spread": ["localized"]
+      },
+      "severity_weight": 35,
+      "symptoms": [
+        "Individual grains in the panicle transformed into greenish-yellow velvety spore balls",
+        "More common in high nitrogen, dense canopy fields during humid weather"
+      ],
+      "treatment": [
+        "Spray a recommended fungicide (e.g. propiconazole) at panicle initiation to booting stage as preventive measure",
+        "Hand-remove and destroy visible smut balls to reduce spread to storage"
+      ],
+      "prevention": [
+        "Avoid excess nitrogen fertilization",
+        "Use resistant varieties where available"
+      ]
+    }
+  ],
+
+  "pests": [
+    {
+      "pest_key": "stem_borer",
+      "name": "Yellow Stem Borer",
+      "scientific_name": "Scirpophaga incertulas",
+      "risk_factors": {
+        "season": ["kharif_monsoon", "summer_zaid"],
+        "conditions": ["vegetative to flowering stage", "continuous standing water"]
+      },
+      "symptoms": [
+        "Dead heart (central shoot dries up) in vegetative stage",
+        "White ear/whitehead (empty panicle) at reproductive stage"
+      ],
+      "management": [
+        "Install pheromone traps to monitor and mass-trap adult moths",
+        "Apply recommended granular insecticide at early tillering if infestation crosses threshold",
+        "Clip and destroy egg masses on leaf tips when seen"
+      ]
+    },
+    {
+      "pest_key": "brown_planthopper",
+      "name": "Brown Planthopper (BPH)",
+      "scientific_name": "Nilaparvata lugens",
+      "risk_factors": {
+        "season": ["rabi_winter", "kharif_monsoon"],
+        "conditions": ["dense crop canopy", "excess nitrogen", "continuous flooding"]
+      },
+      "symptoms": [
+        "Circular patches of yellowing and drying plants (hopper burn)",
+        "Insects visible at the base of the plant near the water line"
+      ],
+      "management": [
+        "Drain field intermittently to disrupt breeding conditions",
+        "Avoid excess nitrogen application",
+        "Spray a recommended insecticide targeted at the base of the plant if hopper burn patches appear"
+      ]
+    },
+    {
+      "pest_key": "leaf_folder",
+      "name": "Rice Leaf Folder",
+      "scientific_name": "Cnaphalocrocis medinalis",
+      "risk_factors": {
+        "season": ["kharif_monsoon"],
+        "conditions": ["vegetative stage", "high humidity"]
+      },
+      "symptoms": [
+        "Leaves folded longitudinally with larvae feeding inside, leaving white streaks",
+        "Scraped, transparent patches visible when leaf unfolded"
+      ],
+      "management": [
+        "Field sanitation - remove grassy weeds that host the pest",
+        "Spray a recommended insecticide if folding crosses 10-15% of leaves"
+      ]
+    },
+    {
+      "pest_key": "gall_midge",
+      "name": "Rice Gall Midge",
+      "scientific_name": "Orseolia oryzae",
+      "risk_factors": {
+        "season": ["kharif_monsoon"],
+        "conditions": ["vegetative/tillering stage", "high humidity, cloudy weather"]
+      },
+      "symptoms": [
+        "Central shoot transforms into a hollow, onion-like 'silver shoot' gall",
+        "Affected tillers do not produce panicles"
+      ],
+      "management": [
+        "Use resistant varieties in endemic tracts",
+        "Remove and destroy silver shoots when first noticed",
+        "Avoid staggered planting dates across a region which sustains midge populations"
+      ]
+    },
+    {
+      "pest_key": "gundhi_bug",
+      "name": "Gundhi Bug (Rice Bug)",
+      "scientific_name": "Leptocorisa acuta",
+      "risk_factors": {
+        "season": ["kharif_monsoon"],
+        "conditions": ["flowering to milk stage", "nearby grassy weed hosts"]
+      },
+      "symptoms": [
+        "Chaffy, empty, or partially filled grains from sap sucking during milk stage",
+        "Characteristic foul odor from disturbed bugs in the field"
+      ],
+      "management": [
+        "Field and bund sanitation to remove grassy weed hosts",
+        "Spray a recommended insecticide during early morning or evening when bugs are most active"
+      ]
+    }
+  ],
+
+  "weather_sensitivity": {
+    "optimal_rainfall_mm_month": [150, 300],
+    "optimal_temp_c": [20, 35],
+    "optimal_humidity_pct": [60, 90],
+    "risk_conditions": [
+      {
+        "condition": "prolonged_humid_cloudy",
+        "triggers": {"cloud_cover": "overcast", "humidity": "high"},
+        "impact": "Elevated blast and bacterial leaf blight risk",
+        "severity_weight": 70
+      },
+      {
+        "condition": "drought_dry_spell",
+        "triggers": {"rainfall": "none"},
+        "impact": "Spikelet sterility, reduced tillering, stress-related yield loss",
+        "severity_weight": 65
+      },
+      {
+        "condition": "heat_stress_flowering",
+        "triggers": {"temperature": "high"},
+        "impact": "Poor grain set if occurring during flowering stage",
+        "severity_weight": 55
+      },
+      {
+        "condition": "cold_spell",
+        "triggers": {"temperature": "low"},
+        "impact": "Spikelet sterility and delayed maturity in winter (rabi) crop",
+        "severity_weight": 50
+      },
+      {
+        "condition": "high_wind_lodging",
+        "triggers": {"wind": "strong"},
+        "impact": "Crop lodging near maturity causing harvest losses",
+        "severity_weight": 45
+      }
+    ]
+  }
+}

@@ -1,0 +1,371 @@
+{
+  "crop_key": "cashew",
+  "name": "Cashew",
+  "botanical_name": "Anacardium occidentale",
+  "crop_cycle_days": 1460,
+  "crop_cycle_note": "Perennial tree; first bearing in 3-4 years, economically productive for 25-30 years",
+
+  "growth_stages": [
+    {
+      "stage_key": "nursery_seedling",
+      "name": "Nursery / Seedling",
+      "typical_age": "0-6 months",
+      "score_band": {"min": 0, "max": 15},
+      "characteristics": [
+        "Grafted or seedling plant in polybag, height under 50 cm",
+        "Few pairs of leaves"
+      ],
+      "care_focus": [
+        "Partial shade and regular watering in nursery",
+        "Protect from damping off in overwatered beds"
+      ]
+    },
+    {
+      "stage_key": "vegetative_growth",
+      "name": "Vegetative Growth",
+      "typical_age": "1-3 years",
+      "score_band": {"min": 15, "max": 45},
+      "characteristics": [
+        "Rapid canopy expansion, multiple branch flushes",
+        "No flowering yet"
+      ],
+      "care_focus": [
+        "Formative pruning to shape canopy and encourage branching",
+        "Regular basin irrigation in dry months for establishment"
+      ]
+    },
+    {
+      "stage_key": "flowering",
+      "name": "Flowering",
+      "typical_age": "3-4 years onward, annual December-February",
+      "score_band": {"min": 45, "max": 65},
+      "characteristics": [
+        "Terminal panicles with mixed male and hermaphrodite flowers",
+        "Panicle color ranges from yellow-green to pinkish depending on variety"
+      ],
+      "care_focus": [
+        "Avoid pesticide spray during peak flowering to protect pollinators",
+        "Monitor closely for tea mosquito bug, the most damaging pest at this stage"
+      ]
+    },
+    {
+      "stage_key": "fruit_nut_development",
+      "name": "Fruit / Nut Development",
+      "typical_age": "recurring, 2 months after flowering",
+      "score_band": {"min": 65, "max": 85},
+      "characteristics": [
+        "Cashew apple (pseudo-fruit) swelling with true nut attached at the base",
+        "Nut shell hardening progressively"
+      ],
+      "care_focus": [
+        "Sustain irrigation if dry spell occurs during fruit swell",
+        "Watch for anthracnose on developing nuts and apples in humid weather"
+      ]
+    },
+    {
+      "stage_key": "maturity_harvest",
+      "name": "Maturity / Harvest",
+      "typical_age": "2-3 months after fruit set",
+      "score_band": {"min": 85, "max": 100},
+      "characteristics": [
+        "Cashew apple fully colored (yellow/red), nut hangs below and rattles when shaken",
+        "Fruits drop naturally at full maturity"
+      ],
+      "care_focus": [
+        "Collect fallen nuts daily to prevent quality loss and rot",
+        "Sun-dry nuts to proper moisture level before storage"
+      ]
+    }
+  ],
+
+  "seasonal_calendar": [
+    {
+      "season": "winter_flowering",
+      "months": "December-February",
+      "operations": [
+        "Flowering and early fruit set period - critical monitoring window",
+        "Avoid spraying insecticide during peak bloom hours to protect pollinators",
+        "Apply potash-rich fertilizer split to support flowering"
+      ],
+      "precautions": [
+        "Highest risk period for tea mosquito bug damage on flush and panicles",
+        "Cold, dewy mornings can favor powdery mildew on panicles"
+      ]
+    },
+    {
+      "season": "summer_harvest",
+      "months": "March-May",
+      "operations": [
+        "Main harvest season - daily collection of fallen nuts",
+        "Sun-drying and proper storage of harvested nuts",
+        "Post-harvest pruning of dead/diseased twigs"
+      ],
+      "precautions": [
+        "Delayed collection in hot weather increases nut quality loss and mold",
+        "Watch for stem/root borer entry points on pruned surfaces"
+      ]
+    },
+    {
+      "season": "monsoon",
+      "months": "June-September",
+      "operations": [
+        "Apply first fertilizer dose after soil moisture is adequate",
+        "Deweeding and basin management around tree base",
+        "Undertake canopy management pruning for airflow"
+      ],
+      "precautions": [
+        "Root/collar rot risk rises in poorly drained, waterlogged basins",
+        "Anthracnose can affect new vegetative flush in persistent humidity"
+      ]
+    },
+    {
+      "season": "post_monsoon",
+      "months": "October-November",
+      "operations": [
+        "Second fertilizer split application",
+        "Prepare canopy (light pruning) ahead of flowering season",
+        "Apply pre-flowering pest management measures"
+      ],
+      "precautions": [
+        "Monitor new flush for early tea mosquito bug activity before flowering starts"
+      ]
+    }
+  ],
+
+  "diseases": [
+    {
+      "disease_key": "anthracnose",
+      "name": "Anthracnose",
+      "causal_agent": "Colletotrichum gloeosporioides",
+      "match_criteria": {
+        "affected_part": ["leaves", "fruit_nut"],
+        "discoloration": ["blackening", "browning"],
+        "odor_ooze": "no",
+        "onset_speed": "sudden",
+        "spread": ["spreading"]
+      },
+      "severity_weight": 65,
+      "symptoms": [
+        "Irregular dark brown to black lesions on young leaves, twigs, panicles, and developing nuts/apples",
+        "Affected panicles may dry up (blossom blight), reducing fruit set",
+        "Infected nuts often shrivel or drop prematurely"
+      ],
+      "treatment": [
+        "Spray a copper-based fungicide (e.g. 1% Bordeaux mixture) at first sign of infection",
+        "Remove and destroy severely affected panicles and twigs"
+      ],
+      "prevention": [
+        "Prophylactic copper spray at flush and pre-flowering stages in humid regions",
+        "Prune to maintain airflow and reduce canopy humidity"
+      ]
+    },
+    {
+      "disease_key": "powdery_mildew",
+      "name": "Powdery Mildew",
+      "causal_agent": "Oidium anacardii",
+      "match_criteria": {
+        "affected_part": ["fruit_nut"],
+        "discoloration": ["none"],
+        "odor_ooze": "no",
+        "onset_speed": "sudden",
+        "spread": ["spreading"]
+      },
+      "severity_weight": 60,
+      "symptoms": [
+        "White powdery fungal coating on panicles, flowers, and young nuts",
+        "Flower and nut drop resulting in significantly reduced yield",
+        "Favored by cool, humid nights during flowering"
+      ],
+      "treatment": [
+        "Dust wettable sulphur on panicles at first sign, ideally in early morning",
+        "Repeat spray/dusting at 10-15 day intervals through the flowering period if humidity persists"
+      ],
+      "prevention": [
+        "Time sulphur application to coincide with flowering onset in disease-prone areas",
+        "Avoid excess shade/humidity buildup around the canopy"
+      ]
+    },
+    {
+      "disease_key": "die_back",
+      "name": "Die-Back",
+      "causal_agent": "Fungal complex, often secondary to borer/pruning wounds",
+      "match_criteria": {
+        "affected_part": ["stem_trunk"],
+        "discoloration": ["browning", "blackening"],
+        "odor_ooze": "no",
+        "onset_speed": "gradual",
+        "spread": ["spreading"]
+      },
+      "severity_weight": 50,
+      "symptoms": [
+        "Progressive drying of twigs and branches starting from the tip inward",
+        "Often follows borer infestation or unhealed pruning cuts"
+      ],
+      "treatment": [
+        "Prune well below the affected (dead) portion into healthy wood",
+        "Apply Bordeaux paste to all cut surfaces after pruning"
+      ],
+      "prevention": [
+        "Disinfect pruning tools between trees",
+        "Control stem borer promptly since wounds are common entry points"
+      ]
+    },
+    {
+      "disease_key": "damping_off",
+      "name": "Damping Off (Nursery)",
+      "causal_agent": "Pythium / Rhizoctonia spp.",
+      "match_criteria": {
+        "affected_part": ["roots"],
+        "discoloration": ["browning"],
+        "odor_ooze": "no",
+        "onset_speed": "sudden",
+        "spread": ["localized"]
+      },
+      "severity_weight": 55,
+      "symptoms": [
+        "Sudden collapse and wilting of young nursery seedlings",
+        "Water-soaked rotting visible at the collar/root region"
+      ],
+      "treatment": [
+        "Drench nursery beds with a recommended fungicide solution",
+        "Remove and destroy affected seedlings promptly to limit spread"
+      ],
+      "prevention": [
+        "Avoid overwatering and ensure good nursery bed drainage",
+        "Use sterilized potting mix for new seedlings"
+      ]
+    },
+    {
+      "disease_key": "leaf_blight",
+      "name": "Leaf Blight",
+      "causal_agent": "Pestalotia / Phomopsis spp.",
+      "match_criteria": {
+        "affected_part": ["leaves"],
+        "discoloration": ["browning", "yellowing"],
+        "odor_ooze": "no",
+        "onset_speed": "gradual",
+        "spread": ["spreading"]
+      },
+      "severity_weight": 35,
+      "symptoms": [
+        "Irregular brown patches on leaves, often starting from margins or tips",
+        "Premature leaf drop in severe, prolonged infection"
+      ],
+      "treatment": [
+        "Spray mancozeb or a recommended fungicide on affected foliage",
+        "Improve plant nutrition to support recovery"
+      ],
+      "prevention": [
+        "Avoid water stress and maintain balanced fertilization",
+        "Prune overcrowded canopy for better airflow"
+      ]
+    }
+  ],
+
+  "pests": [
+    {
+      "pest_key": "tea_mosquito_bug",
+      "name": "Tea Mosquito Bug",
+      "scientific_name": "Helopeltis antonii",
+      "risk_factors": {
+        "season": ["winter_flowering", "post_monsoon"],
+        "conditions": ["new flush present", "flowering/panicle stage"]
+      },
+      "symptoms": [
+        "Dark brown to black necrotic spots on tender shoots, leaves, and panicles",
+        "Panicle drying and blossom blight in severe infestation",
+        "Considered the single most damaging cashew pest"
+      ],
+      "management": [
+        "Spray a recommended insecticide at new flush and early panicle emergence",
+        "Repeat spray after flowering if infestation persists, timed to avoid pollinator activity",
+        "Field sanitation to remove alternate weed hosts nearby"
+      ]
+    },
+    {
+      "pest_key": "stem_root_borer",
+      "name": "Stem and Root Borer",
+      "scientific_name": "Plocaederus ferrugineus",
+      "risk_factors": {
+        "season": ["summer_harvest", "monsoon"],
+        "conditions": ["older/weakened trees", "wounded bark or pruning cuts"]
+      },
+      "symptoms": [
+        "Gum exudation with bore holes at the trunk base and root collar",
+        "Frass (chewed wood fragments) visible near the entry hole",
+        "Progressive branch dieback and tree decline if untreated"
+      ],
+      "management": [
+        "Swab trunk base with a recommended insecticide paste periodically",
+        "Extract and destroy grubs by probing bore holes with a wire",
+        "Avoid trunk injuries and treat wounds/pruning cuts promptly"
+      ]
+    },
+    {
+      "pest_key": "shoot_tip_caterpillar",
+      "name": "Cashew Shoot Tip Caterpillar",
+      "scientific_name": "Various leaf/shoot feeders (e.g. Lymantria spp.)",
+      "risk_factors": {
+        "season": ["vegetative_growth", "post_monsoon"],
+        "conditions": ["new vegetative flush"]
+      },
+      "symptoms": [
+        "Webbed, chewed young shoots and leaves at the growing tip",
+        "Stunted new growth in heavily infested shoots"
+      ],
+      "management": [
+        "Prune and destroy webbed shoot tips",
+        "Spray a recommended insecticide on new flush if infestation is widespread"
+      ]
+    },
+    {
+      "pest_key": "thrips",
+      "name": "Thrips",
+      "scientific_name": "Various (e.g. Rhipiphorothrips cruentatus)",
+      "risk_factors": {
+        "season": ["summer_harvest"],
+        "conditions": ["hot dry weather", "tender leaves"]
+      },
+      "symptoms": [
+        "Silvery streaks and scarring on the leaf undersurface",
+        "Leaf curling and bronzing in heavy infestation"
+      ],
+      "management": [
+        "Spray neem oil (2%) on affected foliage",
+        "Ensure adequate irrigation to reduce plant stress during hot weather"
+      ]
+    }
+  ],
+
+  "weather_sensitivity": {
+    "optimal_rainfall_mm_month": [100, 200],
+    "optimal_temp_c": [20, 34],
+    "optimal_humidity_pct": [50, 80],
+    "risk_conditions": [
+      {
+        "condition": "cool_humid_nights_flowering",
+        "triggers": {"humidity": "high", "temperature": "low"},
+        "impact": "Sharp rise in powdery mildew risk during flowering",
+        "severity_weight": 65
+      },
+      {
+        "condition": "unseasonal_rain_flowering",
+        "triggers": {"rainfall": "moderate", "cloud_cover": "overcast"},
+        "impact": "Flower/panicle drop and reduced fruit set, higher anthracnose risk",
+        "severity_weight": 60
+      },
+      {
+        "condition": "prolonged_dry_heat",
+        "triggers": {"rainfall": "none", "temperature": "high"},
+        "impact": "Nut/apple drop under moisture stress, higher thrips activity",
+        "severity_weight": 45
+      },
+      {
+        "condition": "high_wind",
+        "triggers": {"wind": "strong"},
+        "impact": "Panicle and young fruit drop from physical damage",
+        "severity_weight": 40
+      }
+    ]
+  }
+}
