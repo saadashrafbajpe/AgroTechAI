@@ -104,3 +104,4 @@ def create_database(db_path=DB_PATH):
 
 if __name__ == "__main__":
     create_database()
+
