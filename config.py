@@ -86,4 +86,3 @@ class Config:
             Config.LOG_DIR,
         ]:
             os.makedirs(path, exist_ok=True)
-
