@@ -20,7 +20,7 @@ import io
 import json
 import os
 import sqlite3
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from flask import (
     Flask, render_template_string, request, redirect,
@@ -48,6 +48,7 @@ os.makedirs(UPLOAD_DIR, exist_ok=True)
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "agroedge-offline-edge-key"
 app.config["MAX_CONTENT_LENGTH"] = 8 * 1024 * 1024  # 8 MB
+app.config["PERMANENT_SESSION_LIFETIME"] = timedelta(days=90)
 
 
 # ---------------------------------------------------------------------------
@@ -540,15 +541,17 @@ BASE_HTML = """
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark" style="background:#2e7d32;">
   <div class="container">
-    <a class="navbar-brand" href="{{ url_for('dashboard') }}">🌱 AgroEdge</a>
+    <a class="navbar-brand" href="{{ url_for('index') }}">🌱 AgroEdge</a>
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Crop Selection</a></li>
         <li class="nav-item"><a class="nav-link" href="{{ url_for('dashboard') }}">Dashboard</a></li>
         <li class="nav-item"><a class="nav-link" href="{{ url_for('disease') }}">Disease Detection</a></li>
         <li class="nav-item"><a class="nav-link" href="{{ url_for('pest') }}">Pest Risk</a></li>
         <li class="nav-item"><a class="nav-link" href="{{ url_for('weather') }}">Weather Risk</a></li>
         <li class="nav-item"><a class="nav-link" href="{{ url_for('growth') }}">Growth Stage</a></li>
         <li class="nav-item"><a class="nav-link" href="{{ url_for('report') }}">Report</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('history') }}">History</a></li>
       </ul>
     </div>
   </div>
@@ -593,6 +596,7 @@ def index():
         conn.commit()
         session_id = cur.lastrowid
         conn.close()
+        session.permanent = True
         session["session_id"] = session_id
         session["crop_key"] = crop_key
         session["field_name"] = field_name
@@ -916,20 +920,30 @@ def growth():
 
 @app.route("/report")
 def report():
-    if "session_id" not in session:
+    # Defaults to the active session, but ?sid=<id> lets you open the
+    # saved report for ANY past session pulled from /history.
+    sid = request.args.get("sid", type=int) or session.get("session_id")
+    if not sid:
         return redirect(url_for("index"))
+
     conn = get_db()
-    rows = conn.execute(
-        "SELECT * FROM sessions_log WHERE id=?", (session["session_id"],)
-    ).fetchall()
-    disease_rows = conn.execute("SELECT * FROM disease_records WHERE session_id=? ORDER BY id DESC", (session["session_id"],)).fetchall()
-    pest_rows = conn.execute("SELECT * FROM pest_records WHERE session_id=? ORDER BY id DESC", (session["session_id"],)).fetchall()
-    weather_rows = conn.execute("SELECT * FROM weather_records WHERE session_id=? ORDER BY id DESC", (session["session_id"],)).fetchall()
-    growth_rows = conn.execute("SELECT * FROM growth_records WHERE session_id=? ORDER BY id DESC", (session["session_id"],)).fetchall()
+    session_row = conn.execute("SELECT * FROM sessions_log WHERE id=?", (sid,)).fetchone()
+    if session_row is None:
+        conn.close()
+        flash("That session record no longer exists.")
+        return redirect(url_for("history"))
+
+    disease_rows = conn.execute("SELECT * FROM disease_records WHERE session_id=? ORDER BY id DESC", (sid,)).fetchall()
+    pest_rows = conn.execute("SELECT * FROM pest_records WHERE session_id=? ORDER BY id DESC", (sid,)).fetchall()
+    weather_rows = conn.execute("SELECT * FROM weather_records WHERE session_id=? ORDER BY id DESC", (sid,)).fetchall()
+    growth_rows = conn.execute("SELECT * FROM growth_records WHERE session_id=? ORDER BY id DESC", (sid,)).fetchall()
     conn.close()
 
+    crop = CROP_DATA.get(session_row["crop_key"])
+
     body = """
-    <h3>History Report — {{ crop.name }}</h3>
+    <h3>History Report — {{ crop.name }}{% if session_row.field_name %} · {{ session_row.field_name }}{% endif %}</h3>
+    <p class="text-muted">Session started {{ session_row.created_at }}</p>
     <div class="card p-3 mt-3">
       <h5>Disease Records</h5>
       <table class="table"><thead><tr><th>Date</th><th>Detected</th><th>Health Score</th><th>Risk</th></tr></thead><tbody>
@@ -954,9 +968,45 @@ def report():
       {% for g in growth_rows %}<tr><td>{{ g.created_at }}</td><td>{{ g.detected_stage }}</td><td>{{ g.stage_score }}%</td></tr>{% endfor %}
       </tbody></table>
     </div>
+    <a href="{{ url_for('history') }}" class="btn btn-outline-success mt-2">← All Sessions</a>
     """
-    return render(body, crop=CROP_DATA[session["crop_key"]], disease_rows=disease_rows,
+    return render(body, crop=crop, session_row=session_row, disease_rows=disease_rows,
                   pest_rows=pest_rows, weather_rows=weather_rows, growth_rows=growth_rows)
+
+
+@app.route("/history")
+def history():
+    """Every monitoring session ever saved on this device, most recent first.
+    Nothing is ever deleted from agroedge.db, so old data is always here —
+    even after a browser restart or hitting Reset."""
+    conn = get_db()
+    sessions = conn.execute(
+        "SELECT * FROM sessions_log ORDER BY id DESC"
+    ).fetchall()
+    conn.close()
+
+    body = """
+    <h3>All Monitoring Sessions</h3>
+    <p class="text-muted">Every crop-selection session ever saved on this device.</p>
+    <div class="card p-3 mt-3">
+      <table class="table">
+        <thead><tr><th>Date</th><th>Crop</th><th>Field</th><th></th></tr></thead>
+        <tbody>
+        {% for s in sessions %}
+          <tr>
+            <td>{{ s.created_at }}</td>
+            <td>{{ crops[s.crop_key].name if s.crop_key in crops else s.crop_key }}</td>
+            <td>{{ s.field_name or '—' }}</td>
+            <td><a href="{{ url_for('report', sid=s.id) }}" class="btn btn-sm btn-outline-success">View Report</a></td>
+          </tr>
+        {% else %}
+          <tr><td colspan="4">No sessions saved yet.</td></tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    """
+    return render(body, sessions=sessions, crops=CROP_DATA)
 
 
 @app.route("/uploads/<path:filename>")
@@ -976,4 +1026,3 @@ def reset():
 if __name__ == "__main__":
     init_db()
     app.run(host="127.0.0.1", port=5000, debug=True)
-    
